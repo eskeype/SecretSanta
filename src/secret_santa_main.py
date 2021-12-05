@@ -22,7 +22,9 @@ For this year's secret santa, you will be paired with {1}
 Their email is: {2}
 Their address is: {3}
 
-Merry Christmas, and don't forget that your mom is on the naughty list because Sameer keeps on banging her"""
+Merry Christmas,
+
+Santa Bot"""
 
 TEST_MESSAGE_SKELETON = """\
 Subject: Test Secret Santa Message
@@ -35,7 +37,7 @@ Hopefully this doesn't end up in your spam.
 
 TEST CODE: {0}
 
-- santa bot"""
+- Santa Bot"""
 
 
 def get_santa_credentials(file_name=SANTA_CREDENTIALS_FILE_NAME):
