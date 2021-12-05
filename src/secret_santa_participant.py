@@ -1,5 +1,6 @@
 import random
 
+
 def is_derangement(cand):
     if len(cand) < 2:
         return False
@@ -9,9 +10,11 @@ def is_derangement(cand):
             return False
     return True
 
+
 def get_random_derangement(n):
     if n < 2:
-        raise Exception("Can't have derangement of length < 2. Length is {}".format(n))
+        raise Exception(
+            "Can't have derangement of length < 2. Length is {}".format(n))
 
     nums = list(range(n))
 
@@ -19,6 +22,7 @@ def get_random_derangement(n):
         random.shuffle(nums)
         if is_derangement(nums):
             return nums
+
 
 class Participant:
     def __init__(self, name, email, address):
@@ -47,11 +51,13 @@ class Participant:
     def __hash__(self):
         return hash(self._members())
 
+
 def is_valid_matching(matching):
     for sender, receiver in matching.items():
         if sender.get_address() == receiver.get_address():
             return False
     return True
+
 
 def get_matching(participants):
     while True:
