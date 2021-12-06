@@ -46,7 +46,11 @@ def get_santa_credentials(file_name=SANTA_CREDENTIALS_FILE_NAME):
 
 
 def get_message(gift_giver, gift_receiver):
-    return MESSAGE_SKELETON.format(gift_giver.get_name(), gift_receiver.get_name(), gift_receiver.get_email(), gift_receiver.get_address())
+    return MESSAGE_SKELETON.format(
+        gift_giver.get_name(),
+        gift_receiver.get_name(),
+        gift_receiver.get_email(),
+        gift_receiver.get_address())
 
 
 def get_participants(file_name=PARTICIPANTS_FILE_NAME):
@@ -59,7 +63,6 @@ def get_participants(file_name=PARTICIPANTS_FILE_NAME):
         next(reader)
 
         for row in reader:
-            print(row)
             participants.append(Participant(row[0], row[1], row[2]))
     return participants
 
@@ -81,7 +84,8 @@ def get_test_participant_messages(participants, test_message):
 
 def main():
     participants = get_participants()
-    if len(sys.argv) > 1 & & sys.argv[1] == 'test':
+
+    if len(sys.argv) > 1 and sys.argv[1] == 'test':
         participant_messages = get_test_participant_messages(
             participants, TEST_MESSAGE_SKELETON.format(1))
     else:
